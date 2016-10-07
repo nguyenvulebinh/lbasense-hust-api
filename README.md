@@ -63,7 +63,12 @@ Ví dụ:
 
 | Parameter   | Type            |		Description               |
 |--------------| ------------------|-----------------------------|
-| summaryStats   | Array             | Mảng dữ liệu           |
+| summaryStats   | Array             | Mảng dữ liệu trả về          |
+| date   | String             | Thời điểm lấy dữ liệu         |
+| numVisitors   | Integer             | Tổng số lượng visitor         |
+| numReturningVisitors   | Integer             | Số lượng người tới và quay trở lại region trong khoảng 4 tháng gần đây.|
+| avgDuration   | Integer             | Khảng thời gian trung bình tính theo giây mà mọi người đứng tại region         |
+
 
 
 Ví dụ dữ liệu lấy theo resolution là hours:
