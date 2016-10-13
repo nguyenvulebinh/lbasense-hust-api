@@ -113,3 +113,31 @@ Ví dụ dữ liệu lấy theo resolution là days:
 ```
 {"dates":["2016-10-02T00:00:00","2016-10-03T00:00:00","2016-10-04T00:00:00","2016-10-05T00:00:00"],"visitorCounts":[21403,29687,32856,30663]}
 ```
+
+##Lấy số liệu thống kê thời gian các visitor ở lại region
+
+- Tham số truyên lên (kiểu POST)
+
+| Parameter   | Type            |		Description               |
+|--------------| ------------------|-----------------------------|
+| type   | String             | VisitDurations          |
+| user       | String	            | student-hust    |
+| pass       | String         | 123456a@          |
+| region       | Integer         | id region lấy ở trên          |
+| startTime       | String         | Thời điểm bắt đầu cần lấy số liệu. Ví dụ: 2016-10-01          |
+| endTime       | String         | Thời điểm cuối cần lấy số liệu. Ví dụ: 2016-10-04          |
+
+- Dữ liệu lấy về
+
+| Parameter   | Type            |		Description               |
+|--------------| ------------------|-----------------------------|
+| visitDurations   | Array             |Danh sách các ngày lấy số liệu và thông tin của từng ngày |
+| date   | String             | Ngày lấy số liệu    |
+| from1To5Minutes   | Integer             | Số lượng người đứng tại region trong khoảng thời gian từ 1 tới 5 phút    |
+| from5To10Minutes   | Integer             | Số lượng người đứng tại region trong khoảng thời gian từ 5 tới 10 phút    |
+
+Ví dụ
+
+```
+{"visitDurations":[{"date":"2016-10-01","under1Minute":11658,"from1To5Minutes":1199,"from5To10Minutes":487,"from10To20Minutes":575,"from20To40Minutes":607,"from40To60Minutes":241,"from60To90Minutes":216,"from90To120Minutes":150,"from2To3Hours":135,"from3To4Hours":67,"from4To6Hours":64,"over6Hours":69},{"date":"2016-10-02","under1Minute":14576,"from1To5Minutes":1502,"from5To10Minutes":630,"from10To20Minutes":796,"from20To40Minutes":775,"from40To60Minutes":244,"from60To90Minutes":179,"from90To120Minutes":116,"from2To3Hours":126,"from3To4Hours":63,"from4To6Hours":76,"over6Hours":85},{"date":"2016-10-03","under1Minute":17996,"from1To5Minutes":2727,"from5To10Minutes":1248,"from10To20Minutes":1491,"from20To40Minutes":1600,"from40To60Minutes":634,"from60To90Minutes":568,"from90To120Minutes":395,"from2To3Hours":418,"from3To4Hours":154,"from4To6Hours":149,"over6Hours":142}]}
+```
